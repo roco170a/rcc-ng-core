@@ -1,0 +1,52 @@
+
+
+<h1 mat-dialog-title> Tienda Vs Articulo </h1>
+<div mat-dialog-content>
+    <br />
+    <form [formGroup]="frmtiendaArticuloDetail">
+            
+              <mat-form-field appearance="outline"  >
+              <mat-label for="id">id: </mat-label>
+              <input matInput id="id" 
+              type="text" formControlName="id" >
+              </mat-form-field> &nbsp;
+                
+              <mat-form-field appearance="outline"  >
+              <mat-label for="fecha">fecha: </mat-label>
+              <input matInput id="fecha" 
+              type="text" formControlName="fecha" [matDatepicker]="fechaPicker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="fechaPicker"></mat-datepicker-toggle>
+                <mat-datepicker #fechaPicker></mat-datepicker>
+                </mat-form-field> &nbsp;
+
+
+              <mat-form-field appearance="outline">
+                <mat-label>Tienda</mat-label>
+                <input type="text" placeholder="Selecciona uno" aria-label="Number" matInput [formControl]="ctrlTienda"
+                    [matAutocomplete]="auto1">
+                <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
+                    <mat-option *ngFor="let option of arrTienda" [value]="option.id">
+                        {{option.sucursal}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field> &nbsp;
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Articulo</mat-label>
+                <input type="text" placeholder="Selecciona uno" aria-label="Number" matInput [formControl]="ctrlArticulo"
+                    [matAutocomplete]="auto2">
+                <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete">
+                    <mat-option *ngFor="let option of arrArticulos" [value]="option.id">
+                        {{option.descripcion}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+                
+    </form>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onSaveDialog()">Save</button>
+    <button mat-button mat-dialog-close >Cancel</button>
+</div>

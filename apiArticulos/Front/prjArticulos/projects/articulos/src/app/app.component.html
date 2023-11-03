@@ -1,0 +1,81 @@
+<mat-toolbar color="primary">
+
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+    (click)="onToggleSide1()">
+    <mat-icon fontSet="material-symbols-outlined" *ngIf="sidenav_opened">close</mat-icon>
+    <mat-icon fontSet="material-symbols-outlined" *ngIf="!sidenav_opened">menu</mat-icon>
+    
+  </button>
+
+  <span>Artículos</span>
+
+
+  <span class="object-spacer"></span>
+
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="onLoginMenuSelect()">
+    <mat-icon fontSet="material-symbols-outlined" >account_circle</mat-icon>    
+  </button>
+
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #side1  mode="over" class="mat-elevation-z8">
+    <mat-nav-list>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="itemOption">
+        <div class="itemAligned">
+          <mat-icon fontSet="material-symbols-outlined" mat-list-icon>home</mat-icon> &nbsp;
+          <span *ngIf="isExpanded || isShowing">Inicio</span>&nbsp;
+          <mat-icon fontSet="material-symbols-outlined" class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+        </div>
+      </mat-list-item>
+      <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+        <mat-list-item (click)="onCarritoMenuSelect()" >Compras</mat-list-item>
+        <mat-list-item (click)="onPartidasMenuSelect()" >Partidas</mat-list-item>
+        
+      </div>
+
+      <mat-list-item (click)="showSubmenu2 = !showSubmenu2" class="parent">
+        <div class="itemAligned">
+          <mat-icon fontSet="material-symbols-outlined" mat-list-icon>settings</mat-icon> &nbsp;
+          <span *ngIf="isExpanded || isShowing2">Catálogos</span>&nbsp;
+          <mat-icon fontSet="material-symbols-outlined" class="menu-button" [ngClass]="{'rotated' : showSubmenu2}" *ngIf="isExpanded2 || isShowing2">expand_more</mat-icon>
+        </div>
+      </mat-list-item>
+      <div class="submenu" [ngClass]="{'expanded' : showSubmenu2}" *ngIf="isShowing2 || isExpanded2">
+        <a mat-list-item (click)="onClienteMenuSelect()">Clientes</a>
+        <a mat-list-item (click)="onTiendaMenuSelect()">Tiendas</a>        
+        <a mat-list-item (click)="onArticuloMenuSelect()">Articulos</a>
+        <a mat-list-item (click)="onUsuarioMenuSelect()">Usuarios</a>
+        <a mat-list-item (click)="onClienteArticuloMenuSelect()">Cliente Articulos</a>
+        <a mat-list-item (click)="onTiendaArticuloMenuSelect()">Tienda Articulos</a>
+      </div>
+
+      <mat-list-item class="parent" (click)="onLogout()">
+        <div class="itemAligned">
+          <mat-icon fontSet="material-symbols-outlined" mat-list-icon>logout</mat-icon> &nbsp;
+          <span>Cerrar sesión</span>
+        </div>
+      </mat-list-item>
+
+    </mat-nav-list>
+    <mat-nav-list>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+
+
+  <mat-sidenav #side2 mode="over" position="end" class="mat-elevation-z8" style="border-radius: 10px;overflow:auto">    
+    
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8" style="padding: 15px;">
+      
+      <router-outlet></router-outlet>
+      <br />
+
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

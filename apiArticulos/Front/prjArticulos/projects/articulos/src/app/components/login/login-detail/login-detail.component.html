@@ -1,0 +1,30 @@
+<h1 mat-dialog-title> Usuario </h1>
+<div mat-dialog-content>
+    <br />
+    <form [formGroup]="frmloginDetail">
+            
+              <mat-form-field appearance="outline"  >
+              <mat-label for="id">id: </mat-label>
+              <input matInput id="id" 
+              type="text" formControlName="id" >
+              </mat-form-field> &nbsp;
+                
+              <mat-form-field appearance="outline"  >
+              <mat-label for="userName">userName: </mat-label>
+              <input matInput id="userName" 
+              type="text" formControlName="userName" >
+              </mat-form-field> &nbsp;
+                
+              <mat-form-field appearance="outline"  >
+              <mat-label for="passwword">passwword: </mat-label>
+              <input matInput id="passwword" 
+              type="text" formControlName="passwword" >
+              </mat-form-field> &nbsp;
+                
+    </form>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onSaveDialog()">Save</button>
+    <button mat-button mat-dialog-close >Cancel</button>
+</div>

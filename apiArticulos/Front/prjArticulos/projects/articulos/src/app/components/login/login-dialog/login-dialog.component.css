@@ -1,0 +1,20 @@
+.welcomeFormLogin {
+    padding: 1rem;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.171);
+    width: 20vw;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.welcomeCardContent {
+    display: flex;align-content: center;flex-direction: column;flex-wrap: wrap;justify-content: center;align-items: center;
+
+}

@@ -1,0 +1,32 @@
+
+
+<h1 mat-dialog-title> Carrito </h1>
+<div mat-dialog-content>
+    <br />
+    <form [formGroup]="frmcarritoDetail">
+            
+              <mat-form-field appearance="outline"  >
+              <mat-label for="id">id: </mat-label>
+              <input matInput id="id" 
+              type="text" formControlName="id" >
+              </mat-form-field> &nbsp;
+                
+              <mat-form-field appearance="outline"  >
+              <mat-label for="idCliente">idCliente: </mat-label>
+              <input matInput id="idCliente" 
+              type="text" formControlName="idCliente" >
+              </mat-form-field> &nbsp;
+                
+              <mat-form-field appearance="outline"  >
+              <mat-label for="envio">envio: </mat-label>
+              <input matInput id="envio" 
+              type="text" formControlName="envio" >
+              </mat-form-field> &nbsp;
+                
+    </form>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onSaveDialog()">Save</button>
+    <button mat-button mat-dialog-close >Cancel</button>
+</div>

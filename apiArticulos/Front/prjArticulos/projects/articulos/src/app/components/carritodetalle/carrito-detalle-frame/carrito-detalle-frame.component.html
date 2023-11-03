@@ -1,0 +1,50 @@
+<h1>Catálogo de Detalle del carrito</h1>
+<hr>
+<div style="display: flex;justify-content: flex-end;padding-bottom: 10px;padding-right: 10px;">
+  <button mat-flat-button color="primary" class="example-icon" aria-label="Example icon-button with share icon" (click)="onAddCarritoDetalle(0)"> Nuevo </button>
+</div>
+<table mat-table [dataSource]="dsCarritoDetalle" class="mat-elevation-z8">
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button color="primary"  aria-label="Example icon button with a home icon" (click)="onEditCarritoDetalle(element.id)" >
+        <mat-icon fontSet="material-symbols-outlined">edit</mat-icon>
+      </button>
+      <button mat-icon-button color="primary" aria-label="Example icon button with a home icon"  (click)="onDelCarritoDetalle(element.id)">
+        <mat-icon fontSet="material-symbols-outlined">delete_forever</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+  
+    
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef > Identificador </th>
+        <td mat-cell *matCellDef="let element" data-label="id"> {{element.id}} </td>
+      </ng-container>
+        
+      <ng-container matColumnDef="idCarrito">
+        <th mat-header-cell *matHeaderCellDef > Identificador Carrito </th>
+        <td mat-cell *matCellDef="let element" data-label="idCarrito"> {{element.idCarrito}} </td>
+      </ng-container>
+        
+      <ng-container matColumnDef="idTiendaArticulo">
+        <th mat-header-cell *matHeaderCellDef > Identificador Almacen </th>
+        <td mat-cell *matCellDef="let element" data-label="idTiendaArticulo"> {{element.idTiendaArticulo}} </td>
+      </ng-container>
+        
+      <ng-container matColumnDef="cantidad">
+        <th mat-header-cell *matHeaderCellDef > Cantidad </th>
+        <td mat-cell *matCellDef="let element" data-label="cantidad"> {{element.cantidad}} </td>
+      </ng-container>
+        
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef > Total </th>
+        <td mat-cell *matCellDef="let element" data-label="total"> {{element.total}} </td>
+      </ng-container>
+        
+  
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+  </table>

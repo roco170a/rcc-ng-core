@@ -1,0 +1,61 @@
+
+
+mat-list-item-content {
+    color: white !important;
+  }
+  
+  mat-sidenav {
+      margin: 16px;
+      width: 80vw ;
+      border-right: none;    
+      border-radius: 10px;
+      padding: 16px;    
+    }
+  
+    mat-sidenav-container {
+      height: calc(100vh - 65px);
+    }
+  
+    .content {
+      height: calc(100vh - 130px);
+      border-radius: 10px;
+      margin: 10px;    
+      overflow: auto;
+    }
+  
+    .object-spacer {
+      flex: 1 1 auto;
+    }
+  
+  
+    .menu-button {
+      transition: 300ms ease-in-out;
+      transform: rotate(0deg);    
+    }
+    .menu-button.rotated {
+      transform: rotate(180deg);
+    }
+  
+    .submenu {
+      overflow-y: hidden;
+      transition: transform 300ms ease;
+      transform: scaleY(0);
+      transform-origin: top;
+      padding-left: 30px;
+      display: none;
+    }
+  
+    .submenu.expanded {
+      transform: scaleY(1);
+      display: block;
+    }
+  
+  .itemAligned {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .itemResized {
+    height: auto;
+  }

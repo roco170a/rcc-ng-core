@@ -1,0 +1,56 @@
+<h1 mat-dialog-title>Articulos</h1>
+<div mat-dialog-content>
+    <br />
+    <form [formGroup]="frmarticuloDetail">
+
+        <mat-form-field appearance="outline"  >
+            <mat-label for="id">id: </mat-label>
+            <input matInput id="id" 
+            type="text" formControlName="id" >
+            </mat-form-field> &nbsp;
+              
+            <mat-form-field appearance="outline"  >
+            <mat-label for="codigo">codigo: </mat-label>
+            <input matInput id="codigo" 
+            type="text" formControlName="codigo" >
+            </mat-form-field> &nbsp;
+              
+            <mat-form-field appearance="outline"  >
+            <mat-label for="descripcion">descripcion: </mat-label>
+            <input matInput id="descripcion" 
+            type="text" formControlName="descripcion" >
+            </mat-form-field> &nbsp;
+              
+            <mat-form-field appearance="outline"  >
+            <mat-label for="precio">precio: </mat-label>
+            <input matInput id="precio" 
+            type="text" formControlName="precio" >
+            </mat-form-field> &nbsp;
+            
+            <mat-form-field appearance="outline"  >
+            <mat-label for="imagen">imagen: </mat-label>
+            <span matPrefix>&nbsp; <img [src]="imageData" width="32px"  style="border:1px solid gray"/> &nbsp;</span>
+            <input matInput id="imagen" type="text" formControlName="imagen" >
+
+            <input type="file" class="file-input" #documentoRef (change)="onFileSelected($event, 1)" style="display: none;">
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="documentoRef.click()">
+                <mat-icon fontSet="material-symbols-outlined">attach_file_add</mat-icon>
+              </button>
+
+            </mat-form-field> &nbsp;
+              
+            <mat-form-field appearance="outline"  >
+            <mat-label for="stock">stock: </mat-label>
+            <input matInput id="stock" 
+            type="text" formControlName="stock" >
+            </mat-form-field> &nbsp;
+
+            
+
+    </form>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onSaveDialog()">Save</button>
+    <button mat-button mat-dialog-close >Cancel</button>
+</div>

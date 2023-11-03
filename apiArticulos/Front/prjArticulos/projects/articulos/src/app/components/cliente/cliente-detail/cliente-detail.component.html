@@ -1,0 +1,36 @@
+<h1 mat-dialog-title> Clientes </h1>
+<div mat-dialog-content>
+    <br />
+    <form [formGroup]="frmclienteDetail">
+            
+              <mat-form-field appearance="outline"  >
+              <mat-label for="id">id: </mat-label>
+              <input matInput id="id" 
+              type="text" formControlName="id" >
+              </mat-form-field> &nbsp;
+                
+              <mat-form-field appearance="outline"  >
+              <mat-label for="nombre">nombre: </mat-label>
+              <input matInput id="nombre" 
+              type="text" formControlName="nombre" >
+              </mat-form-field> &nbsp;
+                
+              <mat-form-field appearance="outline"  >
+              <mat-label for="apellidos">apellidos: </mat-label>
+              <input matInput id="apellidos" 
+              type="text" formControlName="apellidos" >
+              </mat-form-field> &nbsp;
+                
+              <mat-form-field appearance="outline"  >
+              <mat-label for="direccion">direccion: </mat-label>
+              <input matInput id="direccion" 
+              type="text" formControlName="direccion" >
+              </mat-form-field> &nbsp;
+                
+    </form>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onSaveDialog()">Save</button>
+    <button mat-button mat-dialog-close >Cancel</button>
+</div>

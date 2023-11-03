@@ -1,0 +1,43 @@
+
+<h1 mat-dialog-title> Detalle Del Carrito </h1>
+<div mat-dialog-content>
+    <br />
+    <form [formGroup]="frmcarritoDetalleDetail">
+            
+              <mat-form-field appearance="outline"  >
+              <mat-label for="id">id: </mat-label>
+              <input matInput id="id" 
+              type="text" formControlName="id" >
+              </mat-form-field> &nbsp;
+                
+              <mat-form-field appearance="outline"  >
+              <mat-label for="idCarrito">idCarrito: </mat-label>
+              <input matInput id="idCarrito" 
+              type="text" formControlName="idCarrito" >
+              </mat-form-field> &nbsp;
+                
+              <mat-form-field appearance="outline"  >
+              <mat-label for="idTiendaArticulo">idTiendaArticulo: </mat-label>
+              <input matInput id="idTiendaArticulo" 
+              type="text" formControlName="idTiendaArticulo" >
+              </mat-form-field> &nbsp;
+                
+              <mat-form-field appearance="outline"  >
+              <mat-label for="cantidad">cantidad: </mat-label>
+              <input matInput id="cantidad" 
+              type="text" formControlName="cantidad" >
+              </mat-form-field> &nbsp;
+                
+              <mat-form-field appearance="outline"  >
+              <mat-label for="total">total: </mat-label>
+              <input matInput id="total" 
+              type="text" formControlName="total" >
+              </mat-form-field> &nbsp;
+                
+    </form>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onSaveDialog()">Save</button>
+    <button mat-button mat-dialog-close >Cancel</button>
+</div>

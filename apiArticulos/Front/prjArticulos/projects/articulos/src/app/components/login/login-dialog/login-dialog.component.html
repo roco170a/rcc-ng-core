@@ -1,0 +1,35 @@
+
+<div class="welcomeCardContent">
+
+
+    <div class="welcomeFormLogin">
+        <h1 mat-dialog-title> Login </h1>
+        <div>
+            <br />
+            <form [formGroup]="frmloginDetail">
+                    
+                      <mat-form-field appearance="outline"  >
+                      <mat-label for="userName">Usuario: </mat-label>
+                      <input matInput id="userName" 
+                      type="text" formControlName="userName" >
+                      </mat-form-field> &nbsp;
+                        
+                      <mat-form-field appearance="outline"  >
+                      <mat-label for="passwword">Contraseña: </mat-label>
+                      <input matInput id="passwword" 
+                      type="password" formControlName="passwword" >
+                      </mat-form-field> &nbsp;
+                        
+            </form>
+        
+        </div>
+        <div mat-dialog-actions>
+            <button mat-button (click)="onSaveDialog()">Login</button>
+            <button mat-button mat-dialog-close >Cancel</button>
+        </div>    
+    </div>
+
+    
+
+</div>
+

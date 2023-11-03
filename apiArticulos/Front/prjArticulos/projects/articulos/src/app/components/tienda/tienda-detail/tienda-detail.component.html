@@ -1,0 +1,33 @@
+
+<h1 mat-dialog-title> Tiendas </h1>
+<div mat-dialog-content>
+    <br />
+    <form [formGroup]="frmtiendaDetail">
+            
+              <mat-form-field appearance="outline"  >
+              <mat-label for="id">id: </mat-label>
+              <input matInput id="id" 
+              type="text" formControlName="id" >
+              </mat-form-field> &nbsp;
+                
+              <mat-form-field appearance="outline"  >
+              <mat-label for="sucursal">sucursal: </mat-label>
+              <input matInput id="sucursal" 
+              type="text" formControlName="sucursal" >
+              </mat-form-field> &nbsp;
+                
+              <mat-form-field appearance="outline"  >
+              <mat-label for="direccion">direccion: </mat-label>
+              <input matInput id="direccion" 
+              type="text" formControlName="direccion" >
+              </mat-form-field> &nbsp;
+                
+    </form>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onSaveDialog()">Save</button>
+    <button mat-button mat-dialog-close >Cancel</button>
+</div>
+
+
